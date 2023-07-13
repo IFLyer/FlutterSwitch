@@ -455,7 +455,7 @@ class _FlutterSwitchState extends State<FlutterSwitch>
     if (widget.showOnOff) {
       return Text(
         widget.inactiveText ?? "Off",
-        style: widget.activeTextStyle ??
+        style: widget.inactiveTextStyle ??
             TextStyle(
               color: widget.inactiveTextColor,
               fontWeight: _inactiveTextFontWeight,
