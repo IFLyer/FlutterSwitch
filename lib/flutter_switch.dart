@@ -31,6 +31,8 @@ class FlutterSwitch extends StatefulWidget {
     this.showOnOff = false,
     this.activeText,
     this.inactiveText,
+    this.activeTextStyle,
+    this.inactiveTextStyle,
     this.activeTextFontWeight,
     this.inactiveTextFontWeight,
     this.switchBorder,
@@ -110,6 +112,10 @@ class FlutterSwitch extends StatefulWidget {
   /// [inactiveTextColor] - The color to use on the text value when the switch is off.
   /// [inactiveTextFontWeight] - The font weight to use on the text value when the switch is off.
   final String? inactiveText;
+
+  final TextStyle? activeTextStyle;
+
+  final TextStyle? inactiveTextStyle;
 
   /// The color to use on the switch when the switch is on.
   ///
@@ -433,11 +439,12 @@ class _FlutterSwitchState extends State<FlutterSwitch>
     if (widget.showOnOff) {
       return Text(
         widget.activeText ?? "On",
-        style: TextStyle(
-          color: widget.activeTextColor,
-          fontWeight: _activeTextFontWeight,
-          fontSize: widget.valueFontSize,
-        ),
+        style: widget.activeTextStyle ??
+            TextStyle(
+              color: widget.activeTextColor,
+              fontWeight: _activeTextFontWeight,
+              fontSize: widget.valueFontSize,
+            ),
       );
     }
 
@@ -448,11 +455,12 @@ class _FlutterSwitchState extends State<FlutterSwitch>
     if (widget.showOnOff) {
       return Text(
         widget.inactiveText ?? "Off",
-        style: TextStyle(
-          color: widget.inactiveTextColor,
-          fontWeight: _inactiveTextFontWeight,
-          fontSize: widget.valueFontSize,
-        ),
+        style: widget.activeTextStyle ??
+            TextStyle(
+              color: widget.inactiveTextColor,
+              fontWeight: _inactiveTextFontWeight,
+              fontSize: widget.valueFontSize,
+            ),
         textAlign: TextAlign.right,
       );
     }

@@ -40,8 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Theme(
       data: ThemeData(
         textTheme: TextTheme(
-          bodyText1: TextStyle(color: _textColor),
-          bodyText2: TextStyle(color: _textColor),
+          bodyLarge: TextStyle(color: _textColor),
+          bodyMedium: TextStyle(color: _textColor),
         ),
       ),
       child: Scaffold(
@@ -137,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     FlutterSwitch(
                       showOnOff: true,
                       activeTextColor: Colors.black,
-                      inactiveTextColor: Colors.blue[50],
+                      inactiveTextColor: Colors.blue[50]!,
                       value: status3,
                       onToggle: (val) {
                         setState(() {
